@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Commerce-page</title>
+    <link rel="stylesheet" href="page.css" />
+    <script
+      src="https://kit.fontawesome.com/92d70a2fd8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="wrapper">
+      <!-- The header tag starts here -->
+      <header>
+        <nav class="menu-section">
+          <span class="Menu-icon">&#9776;</span>
+          <div class="logo">
+            <img src="images/logo.svg" alt="company logo" />
+          </div>
+          <div class="Menu">
+            <span class="Exit-icon">&#10006;</span>
+
+            <!--menu list-->
+            <ul>
+              <li><a href="#">Collections</a></li>
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Women</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+        <!--Cart section starts here-->
+        <nav class="cart-section">
+          <ul>
+            <li>
+              <h6>
+                <img src="images/icon-cart.svg" alt="" />
+              </h6>
+              <!--cart dropdown box-->
+              <div class="cart" id="root">
+                <div class="head">
+                  <h3>Cart</h3>
+                </div>
+                <div class="cart-wrapper" id="cart-wrapper"></div>
+              </div>
+            </li>
+            <!--avatar icon-->
+            <li>
+              <img
+                class="avatar"
+                src="images/image-avatar.png"
+                alt="avatar-image"
+              />
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- the main content staRTS HERE -->
+
+      <section class="content-wrapper">
+        <article class="photo-of-item">
+          <fieldset class="photos">
+            <!--Large Image container starts here-->
+            <div class="photoBox" id="gallerybox">
+              <img
+                onclick="openLightbox(0)"
+                src="images/image-product-1.jpg"
+                alt=""
+                id="photoBox-container"
+              />
+            </div>
+
+            <!--thumnail starts here-->
+            <ul class="thumbNail">
+              <li>
+                <img
+                  class="shop-item-image"
+                  src="images/image-product-1-thumbnail.jpg"
+                  alt="thumbnail-1"
+                  onclick="upDateImage('images/image-product-1.jpg')"
+                />
+              </li>
+              <li>
+                <img
+                  src="images/image-product-2-thumbnail.jpg"
+                  alt="thumbnail-2"
+                  onclick="upDateImage('images/image-product-2.jpg')"
+                />
+              </li>
+              <li>
+                <img
+                  src="images/image-product-3-thumbnail.jpg"
+                  alt="thumbnail-3"
+                  onclick="upDateImage('images/image-product-3.jpg')"
+                />
+              </li>
+              <li>
+                <img
+                  src="images/image-product-4-thumbnail.jpg"
+                  alt="thumbnail-4"
+                  onclick="upDateImage('images/image-product-4.jpg')"
+                />
+              </li>
+            </ul>
+
+            <!-- Lightbox image container -->
+            <div id="cover">
+              <span class="close-icon" onclick="closeLightbox()">&#10005;</span>
+              <span class="nav-icon prev-icon" onclick="navigate(-1)"
+                >&#10094;</span
+              >
+              <img
+                id="lightbox-img"
+                src="images/image-product-1.jpg"
+                alt="Enlarged Image"
+              />
+              <span class="nav-icon next-icon" onclick="navigate(1)"
+                >&#10095;</span
+              >
+            </div>
+          </fieldset>
+        </article>
+        <!--description bar-->
+        <article class="description">
+          <fieldset class="description-card">
+            <h2>SNEAKER COMPANY</h2>
+            <h1 class="item-title">Fall Limited Edition Sneakers</h1>
+            <p>
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they'll withstand
+              everything the weather can offer.
+            </p>
+            <!--price list-->
+            <div class="price-container">
+              <span class="price">$125.00</span>
+              <span class="percentage">50%</span>
+              <small class="initial-price">$250.00</small>
+            </div>
+
+            <!--add plus/minus icons to adjust quantity of items-->
+            <div class="add-to-cart">
+              <ul>
+                <li>
+                  <span class="adjustitem minus"
+                    ><img src="images/icon-minus.svg" alt=""
+                  /></span>
+                </li>
+                <li><span class="adjustitem number-added">0</span></li>
+                <li>
+                  <span class="adjustitem plus">
+                    <img src="images/icon-plus.svg" alt="" />
+                  </span>
+                </li>
+              </ul>
+              <!--add button to cart starts here-->
+              <button class="addcartbtn">
+                <span class="cartbtn"
+                  ><i class="fa-solid fa-cart-shopping"></i></span
+                >Add to cart
+              </button>
+            </div>
+          </fieldset>
+        </article>
+      </section>
+
+      <!-- Alert overlay begins here-->
+      <div id="Alert">
+        <div class="alert-box">
+          <p>Select Quantity to proceed!</p>
+          <span class="close-button" onclick="hideAlert()">Close</span>
+        </div>
+      </div>
+    </section>
+
+    <script src="page.js"></script>
+  </body>
+</html>
