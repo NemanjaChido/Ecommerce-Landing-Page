@@ -336,7 +336,7 @@ header{
     background: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 400;
 }
 
 #lightbox-img {
